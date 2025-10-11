@@ -7,7 +7,6 @@
   <title>Weights and Plates | Science-Driven Fitness</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header>
     <h1>Weights and Plates</h1>
@@ -16,6 +15,7 @@
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="lifting.html">Lifting</a></li>
         <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="mealprep.html">Meal Prep</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -45,10 +45,12 @@
 
     <section class="video-section">
       <h3>Watch: Training Philosophy</h3>
-      <video width="600" controls>
-        <source src="media/training-intro.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="video-wrapper">
+        <button class="video-thumb" aria-label="Play training philosophy video" data-video-id="pWuKIlbybqY">
+          <img src="https://img.youtube.com/vi/pWuKIlbybqY/maxresdefault.jpg" alt="Training Philosophy thumbnail">
+          <span class="play-button" aria-hidden="true"></span>
+        </button>
+      </div>
     </section>
 
     <section class="table-section">
@@ -89,5 +91,35 @@
   <footer>
     <p>© 2025 Weights and Plates. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    (function(){
+      function createIframe(videoId){
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.style.position = 'absolute';
+        iframe.style.top = '0';
+        iframe.style.left = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = '0';
+        return iframe;
+      }
+
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest && e.target.closest('.video-thumb');
+        if(!btn) return;
+        var videoId = btn.getAttribute('data-video-id');
+        if(!videoId) return;
+        var wrapper = btn.parentElement;
+        var iframe = createIframe(videoId);
+        wrapper.replaceChild(iframe, btn);
+      });
+    })();
+  </script>
 </body>
 </html>
