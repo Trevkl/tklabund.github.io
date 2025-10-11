@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Budget-friendly meal prep ideas with six easy recipes to save time and money.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weights and Plates | Meal Prep</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Weights and Plates</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lifting.html">Lifting</a></li>
+        <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="mealprep.html" class="active">Meal Prep</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro center-text">
+      <h2>Healthy Meal Prep on a Budget</h2>
+      <p>
+        Discover six easy and budget-friendly meal prep recipes that will save you time and money while keeping your meals delicious and nutritious.
+      </p>
+    </section>
+
+    <section class="video-section center-text">
+      <h3>Watch: Healthy Meal Prep on a Budget</h3>
+      <div class="video-wrapper">
+        <button class="video-thumb" aria-label="Play Healthy Meal Prep video" data-video-id="l4x1wqaWSWY">
+          <img src="https://img.youtube.com/vi/l4x1wqaWSWY/maxresdefault.jpg" alt="Healthy Meal Prep on a Budget thumbnail">
+          <span class="play-button" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="recipe-summary">
+      <h3>Featured Recipes</h3>
+      <ul>
+        <li><strong>Breakfast:</strong> Overnight oats with chia seeds and berries.</li>
+        <li><strong>Lunch:</strong> Grilled chicken with quinoa and steamed vegetables.</li>
+        <li><strong>Dinner:</strong> Stir-fried tofu with brown rice and broccoli.</li>
+        <li><strong>Snacks:</strong> Hummus with carrot and cucumber sticks.</li>
+      </ul>
+    </section>
+
+    <section class="external-link center-text">
+      <p>
+        For more meal prep ideas and tips, visit the full video on YouTube:
+        <a href="https://www.youtube.com/watch?v=l4x1wqaWSWY" target="_blank">Healthy Meal Prep On A Budget (6 Easy Recipes)</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Weights and Plates. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    (function(){
+      function createIframe(videoId){
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.style.position = 'absolute';
+        iframe.style.top = '0';
+        iframe.style.left = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = '0';
+        return iframe;
+      }
+
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest && e.target.closest('.video-thumb');
+        if(!btn) return;
+        var videoId = btn.getAttribute('data-video-id');
+        if(!videoId) return;
+        var wrapper = btn.parentElement;
+        var iframe = createIframe(videoId);
+        wrapper.replaceChild(iframe, btn);
+      });
+    })();
+  </script>
+</body>
+</html>
