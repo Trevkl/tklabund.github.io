@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Contact Weights and Plates - Ask questions, connect with lifters, and get support.">
+  <meta name="description" content="Contact Weights and Plates for questions, feedback, or collaboration inquiries.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Weights and Plates</title>
+  <title>Weights and Plates | Contact</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header>
     <h1>Weights and Plates</h1>
@@ -16,51 +15,40 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="lifting.html">Lifting</a></li>
         <li><a href="nutrition.html">Nutrition</a></li>
+        <li><a href="mealprep.html">Meal Prep</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="contact-info">
-      <h2>Contact Us</h2>
-      <p>Have a question or want to share your fitness progress? Fill out the form below or email us at 
-      <a href="mailto:tklabund@asu.edu">tklabund@asu.edu</a>.</p>
+    <section class="intro">
+      <h2>Get in Touch</h2>
+      <p>Have questions or want to collaborate? Fill out the form below or email us directly at 
+        <a href="mailto:info@weightsandplates.com">info@weightsandplates.com</a>.
+      </p>
+    </section>
 
+    <section class="contact-form">
       <form action="#" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Your Name">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
 
-        <label for="topic">Preferred Topic:</label>
-        <select id="topic" name="topic">
-          <option value="lifting">Lifting</option>
-          <option value="nutrition">Nutrition</option>
-          <option value="mealprep">Meal Prep</option>
-        </select>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required placeholder="Message Subject">
 
-        <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
 
         <button type="submit">Send Message</button>
       </form>
     </section>
 
-    <section class="community-section">
-      <h3>Community Discussion</h3>
-      <p>Join the conversation below! Share tips, progress, or questions with others.</p>
-
-      <div class="chat-box">
-        <div class="chat-message"><strong>Alex:</strong> What’s the best way to fix my squat form?</div>
-        <div class="chat-message"><strong>Taylor:</strong> Try filming from the side — it helps spot depth and balance!</div>
-      </div>
-
-      <form action="#" class="chat-form">
-        <input type="text" placeholder="Type your message here...">
-        <button type="submit">Post</button>
-      </form>
+    <section class="external-link">
+      <p>Visit our partner site for fitness resources: <a href="https://www.bodybuilding.com/" target="_blank">Bodybuilding.com</a></p>
     </section>
   </main>
 
