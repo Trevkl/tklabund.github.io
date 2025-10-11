@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Nutrition advice and tips for achieving fitness goals.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weights and Plates | Nutrition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Weights and Plates</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lifting.html">Lifting</a></li>
+        <li><a href="nutrition.html" class="active">Nutrition</a></li>
+        <li><a href="mealprep.html">Meal Prep</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro center-text">
+      <h2>Nutrition for Every Goal</h2>
+      <p>
+        Nutrition is vital for performance, recovery, and overall health. Learn to fuel your body 
+        properly for bulking, cutting, or maintenance.
+      </p>
+    </section>
+
+    <section class="nutrition-info center-text">
+      <h3>Macronutrient Breakdown</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Macronutrient</th>
+            <th>Purpose</th>
+            <th>Sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Protein</td>
+            <td>Builds and repairs muscle tissue</td>
+            <td>Chicken, eggs, tofu, fish</td>
+          </tr>
+          <tr>
+            <td>Carbohydrates</td>
+            <td>Provides energy for training</td>
+            <td>Rice, oats, potatoes, fruit</td>
+          </tr>
+          <tr>
+            <td>Fats</td>
+            <td>Supports hormone function and recovery</td>
+            <td>Avocado, olive oil, nuts</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="video-section center-text">
+      <h3>Nutrition Science Explained</h3>
+      <div class="video-wrapper">
+        <button class="video-thumb" aria-label="Play nutrition video" data-video-id="NS_GeXoboo4">
+          <img src="https://img.youtube.com/vi/NS_GeXoboo4/maxresdefault.jpg" alt="Nutrition video thumbnail">
+          <span class="play-button" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="external-link center-text">
+      <p>
+        Learn more about nutrition at 
+        <a href="https://www.healthline.com/nutrition" target="_blank">Healthline Nutrition</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Weights and Plates. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    (function(){
+      function createIframe(videoId){
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        iframe.loading = 'lazy';
+        iframe.style.position = 'absolute';
+        iframe.style.top = '0';
+        iframe.style.left = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = '0';
+        return iframe;
+      }
+
+      document.addEventListener('click', function(e){
+        var btn = e.target.closest && e.target.closest('.video-thumb');
+        if(!btn) return;
+        var videoId = btn.getAttribute('data-video-id');
+        if(!videoId) return;
+        var wrapper = btn.parentElement;
+        var iframe = createIframe(videoId);
+        wrapper.replaceChild(iframe, btn);
+      });
+    })();
+  </script>
+</body>
+</html>
