@@ -1,3 +1,4 @@
+/* ---------- Global Styles ---------- */
 :root {
   --primary-color: #101820;
   --accent-color: #FF3131;
@@ -112,6 +113,73 @@ nav ul li a.active {
   margin: 40px auto;
 }
 
+.video-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Click-to-load thumbnail */
+.video-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.video-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.play-button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.play-button::after {
+  content: '';
+  position: absolute;
+  left: 34%;
+  top: 24%;
+  width: 0;
+  height: 0;
+  border-left: 22px solid var(--accent-color);
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+}
+
 table {
   width: 80%;
   margin: 0 auto;
@@ -208,4 +276,34 @@ footer {
   color: #ccc;
   margin-top: 40px;
 }
+
+.center-text {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------- Nutrition Page Centering ---------- */
+.center-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.video-section video {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.video-section .caption {
+  font-style: italic;
+  color: #ccc;
+  margin-top: 10px;
+}
+
 
